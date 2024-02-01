@@ -1,0 +1,20 @@
+wget -O- https://apt.releases.hashicorp.com/gpg 
+| sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] 
+https://apt.releases.hashicorp.com $(lsb_release -cs) main" 
+| sudo tee /etc/apt/sources.list.d/hashicorp.list
+sudo apt update && sudo apt install vagrant
+sudo apt update
+sudo apt install git
+sudo apt update
+sudo apt install virtualbox
+virtualbox --version
+git clone https://github.com/grassanordine
+/kubernetes-certification-stack.gitcd kubernetes-certification-stack
+vagrant up
+ssh -p 2222 vagrant@127.0.0.1 \ mot de passe : vagrant
+sudo su
+kubectl get nodes
+
+NB : (si toutefois le worker n'est pas monté (notReady) ) taper : vagrant up worker1
+(dans un autre terminal bien entendu)
